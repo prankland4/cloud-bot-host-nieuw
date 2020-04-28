@@ -25,7 +25,7 @@ client.on("message", async message => {
  
     var command = messageArray[0];
 
-    if (command === `${prefix}kick`){
+    if (command === `${prefix}hallo`){
 
         return message.reply("hallo")
 
