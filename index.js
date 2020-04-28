@@ -35,13 +35,13 @@ client.on("message", async message => {
     if (command === `${prefix}help`){
 
         var embedHelp = new discord.MessageEmbed()
-        .setColor("BLEU")
+        .setColor("#3481ed")
         .setTitle("dit zijn alle comands van de bot")
         .setDescription(`**voor de bezoekers**
-        **${prefix}hallo:** laat de bot hallo terug sturen
-        **${prefix}help:** heeft alle comands aan
-        **voor de staff leden die mensen kunnen kicken**
-        **${prefix}kick:** wil je iemand kicken om dat hij de regels bv. niet naleefd (zitten nog fouten in)`);
+        ** ${prefix}hallo:** laat de bot hallo terug sturen
+        ** ${prefix}help:** heeft alle comands aan
+        ** voor de staff leden die mensen kunnen kicken**
+        ** ${prefix}kick:** wil je iemand kicken om dat hij de regels bv. niet naleefd (zitten nog fouten in)`);
 
         return message.reply(embedHelp)
 
