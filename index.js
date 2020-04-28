@@ -31,6 +31,11 @@ client.on("message", async message => {
 
     }
 
+    if (command === `${prefix}invite`){
+
+        return message.reply("here is the invite link off the bot: https://discordapp.com/oauth2/authorize?client_id=704013464712118372&scope=bot")
+
+    }
 
     if (command === `${prefix}help`){
 
