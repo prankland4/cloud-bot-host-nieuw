@@ -24,6 +24,12 @@ client.on("message", async message => {
     var messageArray = message.content.split(" ");
  
     var command = messageArray[0];
+
+    if (command === `${prefix}kick`){
+
+        return message.reply("hallo")
+
+    }
  
     if (command === `${prefix}kick`) {
        
