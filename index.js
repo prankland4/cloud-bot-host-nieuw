@@ -49,9 +49,7 @@ client.on("message", async message => {
         **for the staff members who can kick people**
         ** ${prefix}kick:** do you want to kick someone because he does not comply with the rules, for example (are still errors)`);
 
-        return message.reply("look at dm")
-
-        return message.author.dmChannel.send(embedHelp)
+         return message.author.dmChannel.send(embedHelp)
 
     }
  
