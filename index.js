@@ -74,7 +74,7 @@ client.on("message", async message => {
         var embedPromt = new discord.MessageEmbed()
             .setColor("GREEN")
             .setTitle("please respond within 30 seconds")
-            .setDescription(`wil je ${kickUser} kicken?`);
+            .setDescription(`wil you that ${kickUser} kicket off the server?`);
  
         var embedKicked = new discord.MessageEmbed()
             .setColor("RED")
