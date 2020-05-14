@@ -159,7 +159,7 @@ client.on("message", async message => {
         var embedPrompt = new discord.MessageEmbed()
             .setColor("GREEN")
             .setAuthor("Please respond within 30 sec.")
-            .setDescription(`do you wantban ${banUser}?`);
+            .setDescription(`do you want ban ${banUser}?`);
  
  
         message.channel.send(embedPrompt).then(async msg => {
