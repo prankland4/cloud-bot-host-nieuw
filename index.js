@@ -133,33 +133,33 @@ client.on("message", async message => {
  
         const args = message.content.slice(prefix.length).split(/ +/);
  
-        if (!message.member.hasPermission("ban_MEMBERS")) return message.reply("srry you can't");
+        if (!args[1]) return message.reply("no user given");
  
-        if (!message.guild.me.hasPermission("ban_MEMBERS")) return message.reply("no perms");
+        if (!args[2]) return message.reply("pls give me the reasen");
  
-        if (!args[1]) return message.reply("pls give me a user for ban.");
+        if (!message.member.hasPermission("BAN_MEMBERS")) return message.reply("srry you can't");
  
-        if (!args[2]) return message.reply("pls give me a reasen why you wil ban him");
+        if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.reply("no perms");
  
         var banUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
  
         var reason = args.slice(2).join(" ");
  
-        if (!banUser) return message.reply("can't find the user");
+        if (!banUser) return message.reply("can't find user");
  
         var embed = new discord.MessageEmbed()
             .setColor("#ff0000")
-            .setThumbnail(kickUser.user.displayAvatarURL)
+            .setThumbnail(banUser.user.displayAvatarURL)
             .setFooter(message.member.displayName, message.author.displayAvatarURL)
             .setTimestamp()
-            .setDescription(`** banned:** ${kickUser} (${kickUser.id})
+            .setDescription(`** baned:** ${banUser} (${banUser.id})
             **banned by:** ${message.author}
             **reasen: ** ${reason}`);
  
         var embedPrompt = new discord.MessageEmbed()
             .setColor("GREEN")
             .setAuthor("Please respond within 30 sec.")
-            .setDescription(`do you want ban ${kickUser} ?`);
+            .setDescription(`do you wantban ${banUser}?`);
  
  
         message.channel.send(embedPrompt).then(async msg => {
@@ -186,7 +186,8 @@ client.on("message", async message => {
  
                 msg.delete();
  
-                bankUser.kick(reason).catch(err => {
+               
+                banUser.ban(reason).catch(err => {
                     if (err) return message.channel.send(`Something went wrong.`);
                 });
  
@@ -196,7 +197,7 @@ client.on("message", async message => {
  
                 msg.delete();
  
-                message.reply("ban canceld").then(m => m.delete(5000));
+                message.reply("Ban canceld").then(m => m.delete(5000));
  
             }
  
