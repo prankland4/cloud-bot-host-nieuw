@@ -47,7 +47,7 @@ client.on("message", async message => {
         ** ${prefix}invite:** show the invite link
         ** ${prefix}help:** has all the comands on
         **for the staff members who can kick people**
-        ** ${prefix}kick:** do you want to kick someone because he does not comply with the rules, for example (are still errors)`);
+        ** ${prefix}kick:** do you want to kick someone because he does not comply with the rules, for example `);
 
          return message.reply(embedHelp)
 
@@ -57,19 +57,19 @@ client.on("message", async message => {
  
         const args = message.content.slice(prefix.length).split(/ +/);
  
-        if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry jij kan dit niet");
+        if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("srry you can't");
  
-        if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
+        if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("no perms");
  
-        if (!args[1]) return message.reply("Geen gebruiker opgegeven.");
+        if (!args[1]) return message.reply("pls give me a user for kick.");
  
-        if (!args[2]) return message.reply("Gelieve een redenen op te geven.");
+        if (!args[2]) return message.reply("pls give me a reasen why you xil kick him");
  
         var kickUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
  
         var reason = args.slice(2).join(" ");
  
-        if (!kickUser) return message.reply("Kan de gebruiker niet vinden.");
+        if (!kickUser) return message.reply("can't find the user");
  
         var embed = new discord.MessageEmbed()
             .setColor("#ff0000")
@@ -77,13 +77,13 @@ client.on("message", async message => {
             .setFooter(message.member.displayName, message.author.displayAvatarURL)
             .setTimestamp()
             .setDescription(`** Gekickt:** ${kickUser} (${kickUser.id})
-            **Gekickt door:** ${message.author}
-            **Redenen: ** ${reason}`);
+            **kicked  by:** ${message.author}
+            **reasen: ** ${reason}`);
  
         var embedPrompt = new discord.MessageEmbed()
             .setColor("GREEN")
-            .setAuthor("Gelieve te reageren binnen 30 sec.")
-            .setDescription(`Wil je ${kickUser} kicken?`);
+            .setAuthor("Please respond within 30 sec.")
+            .setDescription(`do you want kick ${kickUser}?`);
  
  
         message.channel.send(embedPrompt).then(async msg => {
@@ -111,7 +111,7 @@ client.on("message", async message => {
                 msg.delete();
  
                 kickUser.kick(reason).catch(err => {
-                    if (err) return message.channel.send(`Er is iets foutgegaan.`);
+                    if (err) return message.channel.send(`Something went wrong.`);
                 });
  
                 message.reply(embed);
@@ -120,7 +120,7 @@ client.on("message", async message => {
  
                 msg.delete();
  
-                message.reply("Kick geanuleerd").then(m => m.delete(5000));
+                message.reply("Kick canceld").then(m => m.delete(5000));
  
             }
  
@@ -132,33 +132,33 @@ client.on("message", async message => {
  
         const args = message.content.slice(prefix.length).split(/ +/);
  
-        if (!args[1]) return message.reply("Geen gebruiker opgegeven.");
+        if (!message.member.hasPermission("ban_MEMBERS")) return message.reply("srry you can't");
  
-        if (!args[2]) return message.reply("Gelieve een redenen op te geven.");
+        if (!message.guild.me.hasPermission("ban_MEMBERS")) return message.reply("no perms");
  
-        if (!message.member.hasPermission("BAN_MEMBERS")) return message.reply("sorry jij kan dit niet");
+        if (!args[1]) return message.reply("pls give me a user for ban.");
  
-        if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.reply("Geen perms");
+        if (!args[2]) return message.reply("pls give me a reasen why you wil ban him");
  
         var banUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
  
         var reason = args.slice(2).join(" ");
  
-        if (!banUser) return message.reply("Kan de gebruiker niet vinden.");
+        if (!banUser) return message.reply("can't find the user");
  
         var embed = new discord.MessageEmbed()
             .setColor("#ff0000")
-            .setThumbnail(banUser.user.displayAvatarURL)
+            .setThumbnail(kickUser.user.displayAvatarURL)
             .setFooter(message.member.displayName, message.author.displayAvatarURL)
             .setTimestamp()
-            .setDescription(`** Geband:** ${banUser} (${banUser.id})
-            **Geband door:** ${message.author}
-            **Redenen: ** ${reason}`);
+            .setDescription(`** banned:** ${kickUser} (${kickUser.id})
+            **banned by:** ${message.author}
+            **reasen: ** ${reason}`);
  
         var embedPrompt = new discord.MessageEmbed()
             .setColor("GREEN")
-            .setAuthor("Gelieve te reageren binnen 30 sec.")
-            .setDescription(`Wil je ${banUser} bannen?`);
+            .setAuthor("Please respond within 30 sec.")
+            .setDescription(`do you want ban ${kickUser} ?`);
  
  
         message.channel.send(embedPrompt).then(async msg => {
@@ -185,9 +185,8 @@ client.on("message", async message => {
  
                 msg.delete();
  
-               
-                banUser.ban(reason).catch(err => {
-                    if (err) return message.channel.send(`Er is iets foutgegaan.`);
+                bankUser.kick(reason).catch(err => {
+                    if (err) return message.channel.send(`Something went wrong.`);
                 });
  
                 message.reply(embed);
@@ -196,7 +195,7 @@ client.on("message", async message => {
  
                 msg.delete();
  
-                message.reply("Ban geanuleerd").then(m => m.delete(5000));
+                message.reply("ban canceld").then(m => m.delete(5000));
  
             }
  
