@@ -47,7 +47,8 @@ client.on("message", async message => {
         ** ${prefix}invite:** show the invite link
         ** ${prefix}help:** has all the comands on
         **for the staff members who can kick people**
-        ** ${prefix}kick:** do you want to kick someone because he does not comply with the rules, for example `);
+        ** ${prefix}kick:** do you want to kick someone because he does not comply with the rules, for example
+        ** ${prefix}ban:** do you want to ban someone because he does not comply with the rules, for example `);
 
          return message.reply(embedHelp)
 
