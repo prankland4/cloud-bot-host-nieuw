@@ -50,17 +50,14 @@ client.on("message", async message => {
         ** ${prefix}kick:** do you want to kick someone because he does not comply with the rules, for example
         ** ${prefix}ban:** do you want to ban someone because he does not comply with the rules, for example `);
 
-         return message.author.send(embedHelp)
+          message.author.send(embedHelp)
+
+          message.reply("look at dm foer all the comands")
 
 
     }
 
-    if (command === `${prefix}help`){
-      
-     return message.reply("look at dm foer all the comands")
-
-
-    }
+    
  
     if (command === `${prefix}kick`) {
  
