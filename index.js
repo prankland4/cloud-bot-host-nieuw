@@ -38,7 +38,7 @@ client.on("message", async message => {
     }
 
     if (command === `${prefix}help`){
-
+      try{ 
         var embedHelp = new discord.MessageEmbed()
         .setColor("#3481ed")
         .setTitle("these are the comands of the bot")
@@ -50,8 +50,11 @@ client.on("message", async message => {
         ** ${prefix}kick:** do you want to kick someone because he does not comply with the rules, for example
         ** ${prefix}ban:** do you want to ban someone because he does not comply with the rules, for example `);
 
-         return message.reply(embedHelp)
+         return message.author.send(embedHelp)
+      }catch(error){
 
+        message.reply("Something went wrong.")
+      }
     }
  
     if (command === `${prefix}kick`) {
