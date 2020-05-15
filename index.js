@@ -52,7 +52,13 @@ client.on("message", async message => {
 
          return message.author.send(embedHelp)
 
-         return message.reply("look at dm for all the cmds of the bot")
+
+    }
+
+    if (command === `${prefix}help`){
+      
+     return message.reply("look at dm foer all the comands")
+
 
     }
  
