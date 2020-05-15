@@ -52,7 +52,7 @@ client.on("message", async message => {
 
           message.author.send(embedHelp)
 
-          message.reply("look at dm foer all the comands")
+          message.reply("look at dm for all the comands")
 
 
     }
