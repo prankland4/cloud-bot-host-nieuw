@@ -27,13 +27,13 @@ client.on("message", async message => {
 
     if (command === `${prefix}hello`){
 
-        return message.reply("hello")
+        return  message.channel.send("hello")
 
     }
 
     if (command === `${prefix}invite`){
 
-        return message.reply("here is the invite link off the bot: https://discord.com/api/oauth2/authorize?client_id=704013464712118372&permissions=8&scope=bot")
+        return  message.channel.send("here is the invite link off the bot: https://discord.com/api/oauth2/authorize?client_id=704013464712118372&permissions=8&scope=bot")
 
     }
 
