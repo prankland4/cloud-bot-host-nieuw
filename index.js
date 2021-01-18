@@ -33,14 +33,11 @@ client.on("message", async message => {
 
     if (command === `${prefix}invite`){
 
-        return   message.reply("here is the invite link off the bot: https://discord.com/api/oauth2/authorize?client_id=704013464712118372&permissions=8&scope=bot");
+        return   message.reply("here is the invite link off the bot: https://discord.com/api/oauth2/authorize?client_id=704013464712118372&permissions=8&scope=bot"
+       " here is the discord invite link off the bot: https://discord.gg/jWFCgHsBK4");
 
     }
-    if (command === `${prefix}supportDiscord`){
 
-        return   message.reply("here is the discord invite link off the bot: https://discord.gg/jWFCgHsBK4");
-
-    }
 
     if (command === `${prefix}help`){
       
@@ -51,7 +48,6 @@ client.on("message", async message => {
         ** ${prefix}hello:** have the bot send hello back
         ** ${prefix}invite:** show the invite link
         ** ${prefix}help:** has all the comands on
-        ** ${prefix}supportDiscord:** gives the invite to the support server 
         **for the staff members**
         ** ${prefix}kick:** do you want to kick someone because he does not comply with the rules, for example
         ** ${prefix}ban:** do you want to ban someone because he does not comply with the rules, for example `);
