@@ -157,7 +157,7 @@ client.on("message", async message => {
             .setThumbnail(banUser.user.displayAvatarURL)
             .setFooter(message.member.displayName, message.author.displayAvatarURL)
             .setTimestamp()
-            .setDescription(`** baned:** ${banUser} (${banUser.id})
+            .setDescription(`** banned:** ${banUser} (${banUser.id})
             **banned by:** ${message.author}
             **reasen: ** ${reason}`);
  
