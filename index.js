@@ -228,7 +228,7 @@ async function promptMessage(message, author, time, reactions) {
     return message.awaitReactions(filter, { max: 1, time: time }).then(collected => collected.first() && collected.first().emoji.name);
 }
 
-if (command === `${prefix}hello`){
+if (command === `${prefix}clear`){
 
    // !clear aantal
    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Je hebt geen toestemming");
