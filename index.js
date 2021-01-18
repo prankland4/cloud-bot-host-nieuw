@@ -27,19 +27,17 @@ client.on("message", async message => {
 
     if (command === `${prefix}hello`){
 
-        return message.reply("hello")
+        return   message.reply("hello")
 
     }
 
     if (command === `${prefix}invite`){
 
-        return message.reply("here is the invite link off the bot: https://discordapp.com/oauth2/authorize?client_id=704013464712118372&scope=bot")
+        return   message.reply("here is the invite link off the bot: https://discord.com/api/oauth2/authorize?client_id=704013464712118372&permissions=8&scope=bot",
+       "here is the discord invite link off the bot: https://discord.gg/jWFCgHsBK4");
 
     }
-   if (command === `${prefix}botSupportInvite`){
 
-    return message.channel.send("test")
-   }
 
     if (command === `${prefix}help`){
       
@@ -231,5 +229,5 @@ async function promptMessage(message, author, time, reactions) {
     // Dan kunnen we bericht terug sturen met dat icoontje dat is aangeduid.
     return message.awaitReactions(filter, { max: 1, time: time }).then(collected => collected.first() && collected.first().emoji.name);
 }
- 
+
 });
